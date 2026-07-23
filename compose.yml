@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: qualisphere
+      POSTGRES_USER: qualisphere
+      POSTGRES_PASSWORD: change-me-before-deploying
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qualisphere -d qualisphere"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://qualisphere:change-me-before-deploying@db:5432/qualisphere
+      ALLOWED_ORIGINS: http://localhost:8080
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
