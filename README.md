@@ -1,3 +1,5 @@
+<img width="1404" height="789" alt="Screenshot 2026-07-24 at 1 52 27 AM" src="https://github.com/user-attachments/assets/7c8cb62a-24e5-4ae0-9a6e-e2483df9c7a2" />
+<img width="1360" height="707" alt="Screenshot 2026-07-24 at 1 52 32 AM" src="https://github.com/user-attachments/assets/f6ab7ab7-a227-4c07-bd4a-38d93f91678d" />
 # QualiSphere — AI Customer Complaint QMS
 
 QualiSphere is a full-stack demonstration application for recording and assessing pharmaceutical customer complaints across API and finished dosage form (FDF) operations. It combines a React/Redux interface with a FastAPI service, LangGraph workflow, and SQL persistence.
@@ -173,6 +175,6 @@ git push -u origin main
 
 Before pushing, confirm that `.env`, `.venv`, `node_modules`, database files, logs, and real complaint data are excluded. The included `.gitignore` is configured for this repository.
 
-## License
 
-Choose and add a license before publishing publicly. MIT is common for prototypes; consult your organization for company-owned or regulated work.
+
+
